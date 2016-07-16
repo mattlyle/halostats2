@@ -5,6 +5,7 @@ import hashlib
 import json
 import os
 import sys
+import time
 import traceback
 import urllib2
 
@@ -71,6 +72,7 @@ def run_api_command( uri, cacheable ):
 		request.add_header( 'Ocp-Apim-Subscription-Key', API_KEY )
 		response = urllib2.urlopen( request )
 		data = response.read( )
+		time.sleep( 1 )
 
 	parsed = json.loads( data )
 
